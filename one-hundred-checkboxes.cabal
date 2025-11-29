@@ -11,14 +11,24 @@ build-type:         Simple
 common warnings
     ghc-options: -Wall
 
-library
+executable one-hundred-checkboxes
     import:           warnings
-    exposed-modules: Server.SSE
+    main-is:          Main.hs
+    other-modules:    Server.Routes
+                      Server.SSE
+                      Api.Model
     build-depends:    base,
+                      servant,
+                      aeson,
+                      warp,
+                      servant-server,
+                      wai-cors,
                       wai,
+                      wai-app-static,
+                      postgresql-simple,
                       bytestring,
+                      mtl,
                       stm,
                       http-types
     hs-source-dirs:   app
     default-language: Haskell2010
-
