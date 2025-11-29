@@ -1,0 +1,24 @@
+cabal-version:      3.0
+name:               one-hundred-checkboxes
+version:            0.1.0.0
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             One Hundred Checkboxes project authors <https://github.com/natanaelsantana/one-hundred-checkboxes>
+maintainer:         One Hundred Checkboxes project maintainers <https://github.com/natanaelsantana/one-hundred-checkboxes>
+category:           Web
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules: Server.SSE
+    build-depends:    base,
+                      wai,
+                      bytestring,
+                      stm,
+                      http-types
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
