@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS Checkbox(
+    id SERIAL PRIMARY KEY,
+    checked BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+INSERT INTO Checkbox (checked) 
+SELECT FALSE 
+FROM generate_series(1, 100) 
+WHERE NOT EXISTS (SELECT 1 FROM Checkbox);
